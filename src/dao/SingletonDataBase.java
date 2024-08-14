@@ -11,16 +11,16 @@ public class SingletonDataBase {
     private static final String USER = "Domi";
     private static final String PASSWORD = "1234";
 
-    // Instance unique de la connexion
+    // notre instance unique de la connexion
     private static volatile Connection connection = null;
 
-    // Constructeur  instanciation d
+    // notre Constructeur
     private SingletonDataBase() {
-        // Initialisation de la connexion dans le constructeur
+        // Initialisation de la connexion
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (SQLException e) {
-            //  d'erreur plus descriptif
+            //  notre message d'erreur
             System.err.println("Erreur lors de la connexion à la base de données: " + e.getMessage());
         }
     }
